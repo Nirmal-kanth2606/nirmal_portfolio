@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nirmalkanth S – Fresher Video Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF0F3;--panel:#FFFFFF;--ink:#1E2430;--mute:#5A6372;--line:#D3D8E0;--teal:#1F8F88;--amber:#E39A2D;--violet:#6B4EE6;--coral:#E2563F;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1C2029;--panel:#262B36;--ink:#ECEFF4;--mute:#A3ACBA;--line:#3A4150;--teal:#4CC3BB;--amber:#F2B04F;--violet:#9C86FF;--coral:#F27B66}}
+:root[data-theme="dark"]{--bg:#1C2029;--panel:#262B36;--ink:#ECEFF4;--mute:#A3ACBA;--line:#3A4150;--teal:#4CC3BB;--amber:#F2B04F;--violet:#9C86FF;--coral:#F27B66}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Georgia,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:4px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:18px clamp(18px,5vw,56px);border-bottom:1px solid var(--line)}
+.brand{font:800 20px 'Bricolage Grotesque',sans-serif;text-decoration:none}
+nav{display:flex;gap:6px}
+nav a{padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:600;color:var(--mute)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+main{max-width:1040px;margin:0 auto;padding:clamp(28px,6vw,64px) clamp(18px,5vw,56px) 72px}
+.page{display:block;padding-top:88px}#home{padding-top:0}
+h1{font-size:clamp(40px,8vw,84px);font-weight:800;max-width:14ch}
+h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:18px}
+h3{font-size:21px;font-weight:700;margin-bottom:6px}
+.lead{max-width:60ch;color:var(--mute);font-size:19px;margin:22px 0 0}
+/* timeline */
+.tl{margin-top:44px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;overflow-x:auto}
+.tl-in{min-width:640px;position:relative}
+.ruler{height:20px;margin-bottom:8px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 8.333%);border-bottom:1px solid var(--line)}
+.track{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:10px;margin-bottom:8px}
+.track b{font-size:12px;color:var(--mute)}
+.lane{position:relative;height:40px;background:var(--bg);border-radius:6px}
+.clip{position:absolute;top:4px;bottom:4px;border-radius:5px;color:#fff;font:600 13px/32px Figtree,sans-serif;padding:0 10px;white-space:nowrap;overflow:hidden}
+.c-t{background:#1F8F88}.c-a{background:#B97308}.c-v{background:#6B4EE6}.c-r{background:#D2452F}
+.head{position:absolute;top:0;bottom:0;left:44px;width:2px;background:var(--coral);animation:scrub 6s cubic-bezier(.4,0,.2,1) 1 forwards}
+.head::before{content:"";position:absolute;top:-2px;left:-5px;border:6px solid transparent;border-top-color:var(--coral)}
+@keyframes scrub{from{left:54px}to{left:calc(100% - 4px)}}
+@media (prefers-reduced-motion:reduce){.head{animation:none;left:35%}}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);background:var(--panel);padding:6px 14px;border-radius:999px;font-weight:500;font-size:15px}
+.cta{display:inline-block;margin-top:30px;background:var(--coral);color:#fff;padding:13px 26px;border-radius:10px;font-weight:600;text-decoration:none}
+.strengths{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:56px}
+.strengths div{border-left:4px solid var(--teal);padding:4px 0 4px 14px;font-weight:600}
+.strengths div:nth-child(2){border-color:var(--amber)}.strengths div:nth-child(3){border-color:var(--violet)}.strengths div:nth-child(4){border-color:var(--coral)}
+/* work */
+.proj{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,4vw,36px)}
+.proj .meta{color:var(--mute);margin:0 0 18px}
+.proj ul,.about ul{margin:0;padding-left:20px}.proj li,.about li{margin:6px 0;max-width:62ch}
+.reel{margin:22px -4px 0;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px;scrollbar-width:none}
+.reel::-webkit-scrollbar{display:none}
+.hint{margin:14px 0 0;color:var(--mute);font-size:14px}
+.slot{flex:0 0 220px;scroll-snap-align:start;aspect-ratio:9/16;border:2px dashed var(--line);border-radius:12px;display:grid;place-content:center;text-align:center;color:var(--mute);padding:16px;font-size:15px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
+.skills div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.skills p{margin:0;color:var(--mute);font-size:15px}
+/* about */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;margin-top:8px}
+.contact a{display:block;font:700 clamp(20px,3.4vw,30px)/1.3 'Bricolage Grotesque',sans-serif;margin:4px 0 14px;word-break:break-word}
+footer{text-align:center;color:var(--mute);font-size:14px;padding:0 18px 36px}
+@media (max-width:640px){
+body{font-size:16px}
+header{padding:14px 18px}
+main{padding-top:28px;padding-bottom:48px}
+.page{padding-top:64px}
+.lead{font-size:17px}
+.tl{margin-top:32px;padding:10px;-webkit-overflow-scrolling:touch}
+.tl-in{min-width:560px}
+.cta{display:block;text-align:center;width:100%;padding:15px}
+.slot{flex-basis:68vw}
+.proj{padding:20px 16px}
+.cols{gap:28px}
+.skills{grid-template-columns:1fr}
+.strengths{grid-template-columns:1fr 1fr;margin-top:40px}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#home">Nirmalkanth S</a>
+</header>
+<main>
+<section id="home" class="page" aria-label="Home">
+  <h1>I cut clips into stories.</h1>
+  <p class="lead">I'm Nirmalkanth, a fresher video editor working in DaVinci Resolve. I turn raw footage into short, sharp videos with clean transitions, animated text, balanced colour and clear sound.</p>
+  <div class="tl" role="img" aria-label="Editing timeline showing video, text, audio and colour tracks">
+    <div class="tl-in">
+      <div class="track"><b></b><div class="ruler"></div></div>
+      <div class="track"><b>V1</b><div class="lane"><span class="clip c-t" style="left:0;width:24%">Cutting</span><span class="clip c-t" style="left:25%;width:30%">Trimming</span><span class="clip c-t" style="left:56%;width:20%">Speed ramp</span><span class="clip c-t" style="left:77%;width:22%">Keyframes</span></div></div>
+      <div class="track"><b>T1</b><div class="lane"><span class="clip c-v" style="left:12%;width:28%">Text animation</span><span class="clip c-v" style="left:62%;width:26%">Motion graphics</span></div></div>
+      <div class="track"><b>A1</b><div class="lane"><span class="clip c-a" style="left:0;width:48%">Audio editing</span><span class="clip c-a" style="left:49%;width:50%">Sound mixing</span></div></div>
+      <div class="track"><b>Grade</b><div class="lane"><span class="clip c-r" style="left:6%;width:40%">Colour correction</span><span class="clip c-r" style="left:60%;width:38%">Export &amp; encoding</span></div></div>
+      <div class="head" aria-hidden="true"></div>
+    </div>
+  </div>
+  <a class="cta" href="#work">See my work</a>
+  <div class="strengths">
+    <div>Creativity &amp; visual storytelling</div><div>Attention to detail</div><div>Time management</div><div>Quick learning</div>
+  </div>
+</section>
+
+<section id="work" class="page" aria-label="Work">
+  <h2>Work</h2>
+  <article class="proj">
+    <h3>Short-form video editing</h3>
+    <p class="meta">Personal project · DaVinci Resolve</p>
+    <ul>
+      <li>Cut, trimmed and arranged clips into short-form videos.</li>
+      <li>Added transitions, text animations and basic visual effects.</li>
+      <li>Did basic colour correction and audio adjustments.</li>
+      <li>Practised keyframe animation, speed changes and video effects.</li>
+      <li>Exported videos in formats suited to social media platforms.</li>
+    </ul>
+    <div class="reel" id="reel" tabindex="0" aria-label="Video samples, swipe to see more">
+      <div class="slot">Video sample 1<br>Add your link here</div>
+      <div class="slot">Video sample 2<br>Add your link here</div>
+      <div class="slot">Video sample 3<br>Add your link here</div>
+      <div class="slot">Video sample 4<br>Add your link here</div>
+    </div>
+    <p class="hint">Swipe to see more →</p>
+  </article>
+  <h2 style="margin-top:56px">Skills</h2>
+  <div class="skills">
+    <div><h3>Editing</h3><p>Video cutting and trimming, transitions and effects, speed ramping, keyframe animation.</p></div>
+    <div><h3>Motion &amp; text</h3><p>Text animation and basic motion graphics.</p></div>
+    <div><h3>Colour &amp; sound</h3><p>Colour correction, audio editing and sound mixing.</p></div>
+    <div><h3>Delivery</h3><p>Video export and encoding for social media.</p></div>
+  </div>
+</section>
+
+<section id="about" class="page about" aria-label="About and contact">
+  <h2>About &amp; contact</h2>
+  <p class="lead" style="margin-top:0">I'm a creative fresher video editor, looking for the opportunity to start my career and contribute to creative projects.</p>
+  <div class="cols" style="margin-top:36px">
+    <div>
+      <h3>Education</h3>
+      <p>BSc in Computer Science<br>Sadakathullah Appa College, Tirunelveli · March 2020</p>
+      <h3 style="margin-top:28px">Beyond projects</h3>
+      <ul>
+        <li>Created and edited personal video projects in DaVinci Resolve.</li>
+        <li>Explored editing techniques, transitions, effects and text animation.</li>
+        <li>Practised colour correction, audio editing and basic motion graphics.</li>
+        <li>Made short-form content for learning and practice.</li>
+      </ul>
+    </div>
+    <div class="contact">
+      <h3>Let's work together</h3>
+      <a href="mailto:nirmalkanth2606@gmail.com">nirmalkanth2606@gmail.com</a>
+      <a href="tel:+919789413344">+91 97894 13344</a>
+      <p style="color:var(--mute)">Choolaimedu, Chennai</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer>© Nirmalkanth S · Fresher Video Editor</footer>
+<script>
+(function(){
+  var r=document.getElementById('reel');
+  if(!r||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var paused=false,t;
+  function hold(){paused=true;clearTimeout(t);t=setTimeout(function(){paused=false},6000)}
+  ['pointerdown','touchstart','wheel','focusin','mouseenter'].forEach(function(e){r.addEventListener(e,hold,{passive:true})});
+  setInterval(function(){
+    if(paused)return;
+    var step=r.firstElementChild.offsetWidth+16;
+    if(r.scrollLeft+r.clientWidth>=r.scrollWidth-4)r.scrollTo({left:0,behavior:'smooth'});
+    else r.scrollBy({left:step,behavior:'smooth'});
+  },3000);
+})();
+</script>
+</body>
+</html>

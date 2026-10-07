@@ -77,6 +77,18 @@ main{padding-top:28px;padding-bottom:48px}
 .skills{grid-template-columns:1fr}
 .strengths{grid-template-columns:1fr 1fr;margin-top:40px}
 }
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
 </style>
 </head>
 <body>
@@ -116,7 +128,14 @@ main{padding-top:28px;padding-bottom:48px}
       <li>Exported videos in formats suited to social media platforms.</li>
     </ul>
     <div class="reel" id="reel" tabindex="0" aria-label="Video samples, swipe to see more">
-      <div class="slot">Video sample 1<br>Add your link here</div>
+      //copycode
+      <div class="slot">Project 01<br> <div class="video-container">
+        <video controls>
+            <source src="./videos/project01.mp4" type="video/mp4">
+        </video>
+      </div>
+      //copycode
+    </div>
       <div class="slot">Video sample 2<br>Add your link here</div>
       <div class="slot">Video sample 3<br>Add your link here</div>
       <div class="slot">Video sample 4<br>Add your link here</div>
